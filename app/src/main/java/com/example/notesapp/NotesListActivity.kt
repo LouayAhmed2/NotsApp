@@ -1,5 +1,6 @@
 package com.example.notesapp
 
+import android.content.Intent
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
@@ -15,8 +16,12 @@ class NotesListActivity : AppCompatActivity() {
 
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
+                    .setAction("Action", {
+                        val intent=Intent(this@NotesListActivity,AddNoteActivity::class.java)
+                        startActivity(intent)
+                    }).show()
         }
+
     }
 
 }
