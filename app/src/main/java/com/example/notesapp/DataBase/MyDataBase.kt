@@ -13,7 +13,8 @@ abstract  class MyDataBase : RoomDatabase() {
  private var MyDataBaseInstance:MyDataBase?=null
         fun getInstance(context:Context): MyDataBase? {
             if (MyDataBaseInstance==null){
-                MyDataBaseInstance=Room.databaseBuilder(context,MyDataBase::class.java,"NotesDataBase").fallbackToDestructiveMigration().allowMainThreadQueries().build()
+                MyDataBaseInstance=Room.databaseBuilder(context,MyDataBase::class.java,"NotesDataBase")
+                        .fallbackToDestructiveMigration().allowMainThreadQueries().build()
             }
             return MyDataBaseInstance
 
